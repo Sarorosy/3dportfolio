@@ -1,74 +1,36 @@
+/* src/components/HeroSection.css */
 .hero-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-  text-align: center;
-}
-
-/* Style for the text container */
-.text-container {
-  margin-bottom: 20px;
-}
-
-.text-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.text-container p {
-  font-size: 1.2rem;
-  color: #333;
-  max-width: 600px;
-}
-
-/* Style for the 3D model container */
-.model-container {
-  width: 100%;
-  max-width: 600px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
-  .hero-section {
-    flex-direction: row;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    height: 100vh;
+   
   }
-
+  
   .text-container {
     flex: 1;
-    margin-right: 50px;
+    padding: 2rem;
+    max-width: 500px;
   }
-
+  
   .text-container h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
-
+  
   .text-container p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
-
+  
   .model-container {
     flex: 1;
-    height: 500px;
+    height: 100%;
+    position: relative;
   }
-}
-
-@media (max-width: 767px) {
-  .text-container h1 {
-    font-size: 2rem;
+  
+  .model-container canvas {
+    width: 100%;
+    height: 100%;
   }
-
-  .text-container p {
-    font-size: 1rem;
-  }
-
-  .model-container {
-    height: 300px;
-  }
-}
+  
