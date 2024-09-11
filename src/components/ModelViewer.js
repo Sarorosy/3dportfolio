@@ -28,16 +28,26 @@ const ModelViewer = ({ modelUrl }) => {
 
   useEffect(() => {
     const controls = controlsRef.current;
+
     const handleTouchStart = (e) => {
       if (e.touches.length === 1) {
         e.preventDefault(); // Prevent any default behavior for single touch
       }
     };
+
+    const handleTouchMove = (e) => {
+      if (e.touches.length === 1) {
+        e.preventDefault(); // Prevent movement if only one finger
+      }
+    };
+
     const canvas = document.getElementById('canvas');
     canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     return () => {
       canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
