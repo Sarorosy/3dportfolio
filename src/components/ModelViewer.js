@@ -33,16 +33,16 @@ const ModelViewer = ({ modelUrl }) => {
         e.preventDefault(); // Prevent any default behavior for single touch
       }
     };
-
-    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    const canvas = document.getElementById('canvas');
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
 
     return () => {
-      window.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchstart', handleTouchStart);
     };
   }, []);
 
   return (
-    <Canvas>
+    <Canvas id='canvas'>
       {/* Camera setup */}
       <PerspectiveCamera makeDefault position={[0, 0, -4]} />
 
