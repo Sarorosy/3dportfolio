@@ -76,8 +76,11 @@ const ModelViewer = ({ modelUrl }) => {
         maxDistance={10}
         maxAzimuthAngle={5}
         minAzimuthAngle={2}
-        touchAction="none" // Prevent default touch actions
-        enabled={controlsEnabled} // Control whether OrbitControls are enabled
+        touches={{
+          ONE: 1, // Disable single-finger control
+          TWO: 2  // Enable two-finger control for rotation
+        }} // Prevent default touch actions
+        //enabled={controlsEnabled} // Control whether OrbitControls are enabled
       />
     </Canvas>
   );
