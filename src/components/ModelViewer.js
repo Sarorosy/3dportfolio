@@ -2,6 +2,7 @@ import React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
+import * as THREE from 'three';
 
 const Model = ({ url }) => {
   const { scene, animations } = useGLTF(url);
@@ -44,10 +45,10 @@ const ModelViewer = ({ modelUrl }) => {
         minDistance={3}
         maxDistance={10}
         maxAzimuthAngle={5}
-        minAzimuthAngle={2}
+        minAzimuthAngle={-5} // Set to -5 for more control range
         touches={{
-          ONE: 1, // Disable single-finger control
-          TWO: 2,  // Enable two-finger control for rotation
+          ONE: THREE.TOUCH.PAN, // Disable rotation with one finger
+          TWO: THREE.TOUCH.ROTATE, // Enable rotation with two fingers
         }} 
       />
     </Canvas>
