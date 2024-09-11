@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
@@ -24,9 +24,25 @@ const Model = ({ url }) => {
 };
 
 const ModelViewer = ({ modelUrl }) => {
+  const controlsRef = useRef();
+
+  useEffect(() => {
+    const controls = controlsRef.current;
+    const handleTouchStart = (e) => {
+      if (e.touches.length === 1) {
+        e.preventDefault(); // Prevent any default behavior for single touch
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+    };
+  }, []);
+
   return (
     <Canvas>
-
       {/* Camera setup */}
       <PerspectiveCamera makeDefault position={[0, 0, -4]} />
 
@@ -37,13 +53,17 @@ const ModelViewer = ({ modelUrl }) => {
 
       {/* Model and controls */}
       <Model url={modelUrl} />
-      <OrbitControls enableZoom={false}
+      <OrbitControls 
+        ref={controlsRef}
+        enableZoom={false}
+        enablePan={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 4}
         minDistance={3}
         maxDistance={10}
         maxAzimuthAngle={5}
         minAzimuthAngle={2}
+        touchAction="none"
       />
     </Canvas>
   );

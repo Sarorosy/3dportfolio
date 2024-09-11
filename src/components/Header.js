@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className={`flex justify-between items-center p-4 transition-colors duration-300 ${isDarkTheme ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <div className="text-lg font-bold">My Portfolio</div>
-      <nav className={`md:flex space-x-4 ${menuOpen ? 'block' : 'hidden'} md:block`}>
+      <nav className={`md:flex space-x-4 ${menuOpen ? 'block' : 'hidden'} md:block md:flex-row`}>
         <a href="#about" className="hover:text-blue-500">About</a>
         <a href="#projects" className="hover:text-blue-500">Projects</a>
         <a href="#contact" className="hover:text-blue-500">Contact</a>

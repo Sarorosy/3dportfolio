@@ -13,7 +13,7 @@ const HeroSection = () => {
 
       {/* Model container, centered and full width */}
       <div className="md:pl-20 relative w-full h-full flex items-center justify-center">
-        <div className="w-full md:h-[95%] h-[60%]">
+        <div className="w-full md:h-[95%] h-[65%]">
           <ModelViewer modelUrl="./mychar.glb" />
         </div>
       </div>
