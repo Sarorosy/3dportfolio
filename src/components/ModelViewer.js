@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
-import * as THREE from 'three';
 
 const Model = ({ url }) => {
   const { scene, animations } = useGLTF(url);
@@ -25,6 +24,36 @@ const Model = ({ url }) => {
 };
 
 const ModelViewer = ({ modelUrl }) => {
+  const controlsRef = useRef();
+  const [controlsEnabled, setControlsEnabled] = useState(true); // State to control OrbitControls
+
+  useEffect(() => {
+    const controls = controlsRef.current;
+
+    const handleTouchStart = (e) => {
+      if (e.touches.length === 1) {
+        setControlsEnabled(false); // Disable controls for single touch
+      } else if (e.touches.length >= 2) {
+        setControlsEnabled(true); // Enable controls for two touches
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches.length < 2) {
+        setControlsEnabled(false); // Disable controls if fewer than two fingers are used
+      }
+    };
+
+    const canvas = document.getElementById('canvas');
+    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      canvas.removeEventListener('touchstart', handleTouchStart);
+      canvas.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
     <Canvas id="canvas">
       {/* Camera setup */}
@@ -38,6 +67,7 @@ const ModelViewer = ({ modelUrl }) => {
       {/* Model and controls */}
       <Model url={modelUrl} />
       <OrbitControls 
+        ref={controlsRef}
         enableZoom={false}
         enablePan={false}
         maxPolarAngle={Math.PI / 2}
@@ -45,11 +75,9 @@ const ModelViewer = ({ modelUrl }) => {
         minDistance={3}
         maxDistance={10}
         maxAzimuthAngle={5}
-        minAzimuthAngle={-5} // Set to -5 for more control range
-        touches={{
-          ONE: THREE.TOUCH.PAN, // Disable rotation with one finger
-          TWO: THREE.TOUCH.ROTATE, // Enable rotation with two fingers
-        }} 
+        minAzimuthAngle={2}
+        touchAction="none" // Prevent default touch actions
+        enabled={controlsEnabled} // Control whether OrbitControls are enabled
       />
     </Canvas>
   );
