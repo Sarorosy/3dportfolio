@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
@@ -25,19 +25,22 @@ const Model = ({ url }) => {
 
 const ModelViewer = ({ modelUrl }) => {
   const controlsRef = useRef();
+  const [controlsEnabled, setControlsEnabled] = useState(true); // State to control OrbitControls
 
   useEffect(() => {
     const controls = controlsRef.current;
 
     const handleTouchStart = (e) => {
       if (e.touches.length === 1) {
-        e.preventDefault(); // Prevent any default behavior for single touch
+        setControlsEnabled(false); // Disable controls for single touch
+      } else if (e.touches.length >= 2) {
+        setControlsEnabled(true); // Enable controls for two touches
       }
     };
 
     const handleTouchMove = (e) => {
-      if (e.touches.length === 1) {
-        e.preventDefault(); // Prevent movement if only one finger
+      if (e.touches.length < 2) {
+        setControlsEnabled(false); // Disable controls if fewer than two fingers are used
       }
     };
 
@@ -52,7 +55,7 @@ const ModelViewer = ({ modelUrl }) => {
   }, []);
 
   return (
-    <Canvas id='canvas'>
+    <Canvas id="canvas">
       {/* Camera setup */}
       <PerspectiveCamera makeDefault position={[0, 0, -4]} />
 
@@ -73,7 +76,8 @@ const ModelViewer = ({ modelUrl }) => {
         maxDistance={10}
         maxAzimuthAngle={5}
         minAzimuthAngle={2}
-        touchAction="none"
+        touchAction="none" // Prevent default touch actions
+        enabled={controlsEnabled} // Control whether OrbitControls are enabled
       />
     </Canvas>
   );
