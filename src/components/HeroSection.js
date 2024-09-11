@@ -1,13 +1,6 @@
-// src/components/HeroSection.js
 import React from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Suspense } from 'react';
-import { OrbitControls, PerspectiveCamera, useGLTF } from '@react-three/drei';
 import './HeroSection.css'; // Import the CSS file for styling
-import mychar from './mychar.glb';
-import ModelViewer from './ModelViewer';
-
-
+import ModelViewer from './ModelViewer'; // Import ModelViewer
 
 const HeroSection = () => {
   return (
@@ -17,7 +10,7 @@ const HeroSection = () => {
         <p>I'm a Web and Flutter Developer with years of experience.</p>
       </div>
       <div className="model-container">
-       <ModelViewer modelUrl="./mychar.glb"/>
+        <ModelViewer modelUrl="./mychar.glb" />
       </div>
     </section>
   );

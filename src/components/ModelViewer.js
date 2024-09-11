@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
@@ -37,13 +37,20 @@ const ModelViewer = ({ modelUrl }) => {
 
       {/* Model and controls */}
       <Model url={modelUrl} />
-      <OrbitControls enableZoom={false}
+      
+      {/* OrbitControls with two-finger touch rotation */}
+      <OrbitControls
+        enableZoom={false}
         maxPolarAngle={Math.PI / 2}
         minPolarAngle={Math.PI / 4}
         minDistance={3}
         maxDistance={10}
-        maxAzimuthAngle={5}
+        maxAzimuthAngle={5}  // Adjust azimuth angles to control left-right movement
         minAzimuthAngle={2}
+        touches={{
+          ONE: 1, // Disable single-finger control
+          TWO: 2  // Enable two-finger control for rotation
+        }}
       />
     </Canvas>
   );
