@@ -1,0 +1,36 @@
+/* src/components/HeroSection.css */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    height: 100vh;
+   
+  }
+  
+  .text-container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 500px;
+  }
+  
+  .text-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-container p {
+    font-size: 1.25rem;
+  }
+  
+  .model-container {
+    flex: 1;
+    height: 100%;
+    position: relative;
+  }
+  
+  .model-container canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
