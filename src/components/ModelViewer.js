@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
 import { useTheme } from './ThemeContext';
+import * as THREE from 'three';
 
 const Model = ({ url }) => {
   const { scene, animations } = useGLTF(url);
@@ -78,7 +79,10 @@ const ModelViewer = ({ modelUrl }) => {
           maxDistance={10}
           maxAzimuthAngle={5}
           minAzimuthAngle={2}
-          touchAction="none"
+          touches={{
+            ONE: THREE.TOUCH.NONE, // Disable single-finger touch rotation
+            TWO: THREE.TOUCH.ROTATE // Enable rotation with two fingers
+          }}
           
         />
       </Canvas>
