@@ -79,6 +79,7 @@ const ModelViewer = ({ modelUrl }) => {
           maxAzimuthAngle={5}
           minAzimuthAngle={2}
           touchAction="none"
+          
         />
       </Canvas>
 
