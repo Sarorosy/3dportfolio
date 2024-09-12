@@ -33,7 +33,7 @@ const ModelViewer = ({ modelUrl }) => {
 
   useEffect(() => {
     const canvas = document.getElementById('canvas');
-    
+
     const handleTouchStart = (e) => {
       if (e.touches.length === 1) {
         e.preventDefault(); // Prevent any default behavior for single touch
@@ -56,8 +56,8 @@ const ModelViewer = ({ modelUrl }) => {
   }, []);
 
   return (
-    <>
-      <Canvas id='canvas'>
+    <div className="relative w-full h-[90%] " >
+      <Canvas id="canvas" className="w-full h-full overflow-y-hidden " >
         {/* Camera setup */}
         <PerspectiveCamera makeDefault position={[0, 0, -4]} />
 
@@ -68,7 +68,7 @@ const ModelViewer = ({ modelUrl }) => {
 
         {/* Model and controls */}
         <Model url={modelUrl} />
-        <OrbitControls 
+        <OrbitControls
           ref={controlsRef}
           enableZoom={false}
           enablePan={false}
@@ -83,19 +83,20 @@ const ModelViewer = ({ modelUrl }) => {
       </Canvas>
 
       {/* Gradient overlay and bottom text */}
-      <div className="absolute inset-0 pointer-events-none" id='gradientdiv'>
+      <div className="absolute inset-0 pointer-events-none h-full w-full" id="gradientdiv">
         {/* Linear gradient overlay */}
         <div className={`w-full h-full ${gradientClass}`} />
 
         {/* Instruction text */}
-        <div className="absolute bottom-4 w-full text-center z-20 pointer-events-auto">
+        <div className="absolute bottom-0 w-full text-center pointer-events-auto">
           <p className="text-md md:text-lg">
             <span className="hidden md:inline">Press and hold to orbit</span>
             <span className="md:hidden">Use two fingers to orbit</span>
           </p>
         </div>
       </div>
-    </>
+    </div>
+
   );
 };
 
