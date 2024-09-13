@@ -8,10 +8,9 @@ import { ThemeProvider } from './components/ThemeContext';
 function App() {
   return (
     <div className="App">
-      <ThemeProvider>
       <Header />
       <HeroSection />
-      </ThemeProvider>
+      
     </div>
   );
 }

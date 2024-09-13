@@ -651,11 +651,9 @@ video {
   transition-duration: 300ms;
 }
 
-body {
-  transition: background-color 0.3s;
-}
 
-body.dark {
+
+body {
   background-color: #1f2937;
   /* Dark background */
   color: #f9fafb;
