@@ -9,8 +9,8 @@ const HeroSection = () => {
       <div className="w-full md:w-1/3 h-1/4 flex flex-col items-center justify-center px-4 mt-5 md:mt-0 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I'm Saravanan</h1>
         <p className="text-lg sm:text-2xl">
-          Full Stack Web and Flutter Developer
-          <br /> with years of experience.
+          A Full Stack Web Developer & Flutter Enthusiast
+          <br /> <span className='text-gray-400'>with years of experience.</span>
         </p>
       </div>
 

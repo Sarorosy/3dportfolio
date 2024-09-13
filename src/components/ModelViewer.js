@@ -32,29 +32,44 @@ const ModelViewer = ({ modelUrl }) => {
     ? 'bg-gradient-to-b from-transparent via-transparent to-black'
     : 'bg-gradient-to-b from-transparent via-transparent via-yellow to-white opacity-80';
 
-  useEffect(() => {
-    const canvas = document.getElementById('canvas');
-
-    const handleTouchStart = (e) => {
-      if (e.touches.length === 1) {
-        e.preventDefault(); // Prevent any default behavior for single touch
+    const handlePointerDown = (event) => {
+      // Disable controls if only one pointer is down
+      if (event.pointerType === 'touch' && event.isPrimary) {
+        if (event.pointerId !== 1) {
+          controlsRef.current.enabled = false; // Disable controls
+        }
       }
     };
-
-    const handleTouchMove = (e) => {
-      if (e.touches.length === 1) {
-        e.preventDefault(); // Prevent movement if only one finger
+  
+    const handlePointerMove = (event) => {
+      // Enable controls only if two fingers are being used
+      if (event.pointerType === 'touch') {
+        const pointers = navigator.maxTouchPoints;
+        controlsRef.current.enabled = pointers > 1;
       }
     };
-
-    canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
-    canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-    return () => {
-      canvas.removeEventListener('touchstart', handleTouchStart);
-      canvas.removeEventListener('touchmove', handleTouchMove);
+  
+    const handlePointerUp = () => {
+      // Re-enable controls when all pointers are up
+      controlsRef.current.enabled = true;
     };
-  }, []);
+  
+    useEffect(() => {
+      const canvas = document.getElementById('canvas');
+  
+      // Add pointer event listeners
+      canvas.addEventListener('pointerdown', handlePointerDown);
+      canvas.addEventListener('pointermove', handlePointerMove);
+      canvas.addEventListener('pointerup', handlePointerUp);
+      canvas.addEventListener('pointerleave', handlePointerUp); // Handle leaving the canvas
+  
+      return () => {
+        canvas.removeEventListener('pointerdown', handlePointerDown);
+        canvas.removeEventListener('pointermove', handlePointerMove);
+        canvas.removeEventListener('pointerup', handlePointerUp);
+        canvas.removeEventListener('pointerleave', handlePointerUp);
+      };
+    }, []);
 
   return (
     <div className="relative w-full h-[90%] " >
@@ -79,10 +94,7 @@ const ModelViewer = ({ modelUrl }) => {
           maxDistance={10}
           maxAzimuthAngle={5}
           minAzimuthAngle={2}
-          touches={{
-            ONE: THREE.TOUCH.NONE, // Disable single-finger touch rotation
-            TWO: THREE.TOUCH.ROTATE // Enable rotation with two fingers
-          }}
+          
           
         />
       </Canvas>
@@ -94,7 +106,7 @@ const ModelViewer = ({ modelUrl }) => {
 
         {/* Instruction text */}
         <div className="absolute bottom-0 w-full text-center pointer-events-auto">
-          <p className="text-md md:text-lg">
+          <p className="text-md md:text-lg opacity-40">
             <span className="hidden md:inline">Press and hold to orbit</span>
             <span className="md:hidden">Use two fingers to orbit</span>
           </p>
