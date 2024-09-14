@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
 import { AnimationMixer } from 'three';
-const Model = ({ url }) => {
+const Model = ({ url, rotation }) => {
   const { scene, animations } = useGLTF(url);
   const mixer = new AnimationMixer(scene);
 
@@ -24,6 +24,15 @@ const Model = ({ url }) => {
 
 const ModelViewer = ({ modelUrl }) => {
   const controlsRef = useRef();
+  const [rotation, setRotation] = React.useState(0);
+
+  // Handle mouse movement to rotate the model
+  const handleMouseMove = (event) => {
+    const { clientX } = event;
+    // Adjust the rotation based on mouse position
+    const normalizedX = (clientX / window.innerWidth) * 2 - 1; // Normalize to range -1 to 1
+    setRotation(normalizedX * Math.PI); // Scale to desired rotation
+  };
 
     const handleTouchStart = (event) => {
       if (event.touches.length === 1) {
@@ -41,14 +50,16 @@ const ModelViewer = ({ modelUrl }) => {
   
     useEffect(() => {
       const canvas = document.getElementById('canvas');
-      
-      // Add touch event listeners to prevent single-finger scrolling
+  
+      // Add touch and mouse event listeners
       canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
       canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+      canvas.addEventListener('mousemove', handleMouseMove);
   
       return () => {
         canvas.removeEventListener('touchstart', handleTouchStart);
         canvas.removeEventListener('touchmove', handleTouchMove);
+        canvas.removeEventListener('mousemove', handleMouseMove);
       };
     }, []);
 
@@ -64,7 +75,7 @@ const ModelViewer = ({ modelUrl }) => {
         <directionalLight position={[-10, -10, -5]} intensity={5} color={"violet"} />
 
         {/* Model and controls */}
-        <Model url={modelUrl} />
+        <Model url={modelUrl} rotation={rotation} />
         <OrbitControls
           ref={controlsRef}
           enableZoom={false}

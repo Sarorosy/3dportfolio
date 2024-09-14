@@ -9,7 +9,7 @@ import About from './components/About';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App px-1 lg:px-12">
       <Header />
       <HeroSection />
       <About />

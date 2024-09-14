@@ -33,7 +33,7 @@ const MouseFollower = () => {
   }, []);
 
   return (
-    <div>
+    <div className="hidden md:block">
       {/* Small white dot */}
       <div
         id="small-dot"

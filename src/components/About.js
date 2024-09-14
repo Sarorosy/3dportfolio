@@ -17,7 +17,7 @@ export default function About() {
       scrollTrigger: {
         trigger: textRef.current,
         start: "top bottom", 
-        end: "middle top",   
+        end: "top middle",   
         scrub: 1,           
       },
     });
@@ -40,9 +40,9 @@ export default function About() {
   }, []);
 
   return (
-    <div className="relative w-full p-6 flex flex-col justify-center items-start md:w-5/6 mx-auto">
+    <div className="relative w-full p-6 flex flex-col justify-center items-start md:w-5/6 mx-auto" id='about'>
       {/* <h2 className="text-3xl font-bold mb-4 text-white">About Me</h2> */}
-      <p ref={textRef} className="text-5xl text-white text-center anton-font">
+      <p ref={textRef} className="text-2xl md:text-5xl text-white text-center anton-font">
         {text.split(' ').map((word, index) => ( // Split by space for words
           <span key={index} className="opacity-0 mx-1"> {/* Add margin between words */}
             {word}{' '}

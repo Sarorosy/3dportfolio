@@ -652,7 +652,13 @@ video {
 }
 
 
-
+html{
+  scroll-behavior: smooth;
+ 
+}
+body::-webkit-scrollbar {
+  display: none;
+}
 body {
   background-color: #1f2937;
   /* Dark background */
