@@ -1,6 +1,7 @@
 // src/components/HeroSection.js
 import React from 'react';
 import ModelViewer from './ModelViewer';
+import Online from './Online';
 
 const HeroSection = () => {
   return (
@@ -12,6 +13,10 @@ const HeroSection = () => {
           A Full Stack Web Developer & Flutter Enthusiast
           <br /> <span className='text-gray-400'>with years of experience.</span>
         </p>
+        <div className="mt-5 flex items-center justify-center">
+          <Online/>
+          
+        </div>
       </div>
 
       {/* ModelViewer section */}

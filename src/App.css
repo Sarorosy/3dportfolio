@@ -683,3 +683,6 @@ body {
     display: none;
   }
 }
+.anton-font{
+  font-family: "Anton", sans-serif !important;
+}
