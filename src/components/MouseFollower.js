@@ -37,15 +37,15 @@ const MouseFollower = () => {
       {/* Small white dot */}
       <div
         id="small-dot"
-        className="absolute w-2 h-2 bg-gray-200 opacity-60 rounded-full pointer-events-none"
+        className="hidden md:block absolute w-2 h-2 bg-gray-200 opacity-60 rounded-full pointer-events-none"
         style={{ position: 'fixed', top: 5, left: 5 }} // Fixed positioning
       ></div>
 
       {/* Larger circle */}
       <div
         id="large-circle"
-        className="absolute w-12 h-12 bg-transparent border border-white opacity-40 rounded-full pointer-events-none"
-        style={{ position: 'fixed', top: 22, left: 22 }} // Fixed positioning
+        className="hidden md:block absolute w-10 h-10 bg-transparent border border-white opacity-30 rounded-full pointer-events-none"
+        style={{ position: 'fixed', top: 26, left: 27 }} // Fixed positioning
       ></div>
     </div>
   );
