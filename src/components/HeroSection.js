@@ -5,7 +5,7 @@ import Online from './Online';
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white mt-16">
+    <section className="w-full h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white ">
       {/* Transparent overlay with text */}
       <div className="w-full md:w-1/3 h-1/4 flex flex-col items-center justify-center px-4 mt-5 md:mt-0 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I'm Saravanan</h1>

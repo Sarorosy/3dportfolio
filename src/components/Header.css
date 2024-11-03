@@ -7,6 +7,14 @@ body{
   background-color: #000000; /* Black background for dark mode */
   color: #f9fafb; /* Light text color for dark mode */
 }
+body {
+  overflow-y: scroll; /* keeps scroll but hides it */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 /* The switch container */
 .switch {
   --transition: 300ms;

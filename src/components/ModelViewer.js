@@ -100,7 +100,7 @@ const ModelViewer = ({ modelUrl }) => {
         <div className="absolute bottom-0 w-full text-center pointer-events-auto">
           <p className="text-md md:text-lg opacity-40">
             <span className="hidden md:inline">Press and hold to orbit</span>
-            <span className="md:hidden">Use two fingers to orbit</span>
+            <span className="md:hidden">Use finger to orbit</span>
           </p>
         </div>
       </div>
