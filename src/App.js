@@ -7,16 +7,21 @@ import { ThemeProvider } from './components/ThemeContext';
 import MouseFollower from './components/MouseFollower';
 import About from './components/About';
 import Loader from './components/Loader';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App px-1 lg:px-12">
-      <Loader />
-      <Header />
-      <HeroSection />
-      <About />
-      <MouseFollower />
-    </div>
+    <Router>
+      <ThemeProvider>
+        <div className="App px-1 lg:px-12">
+          <Loader />
+          <Header />
+          <HeroSection />
+          <About />
+          <MouseFollower />
+        </div>
+      </ThemeProvider>
+    </Router>
   );
 }
 

@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import './Header.css';
 import { GrClose } from "react-icons/gr";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate(); // Initialize useNavigate
+  const location = useLocation(); // Get the current location
 
   const handleNavigation = (path) => {
     setMenuOpen(false); // Close menu on navigation
     navigate(path); // Navigate to the specified path
+  };
+
+  // Function to check if the link is active
+  const isActive = (path) => {
+    return location.pathname === path ? 'active' : '';
   };
 
   return (
@@ -18,9 +24,10 @@ const Header = () => {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-4">
-        <button onClick={() => handleNavigation('#about')} className="hover:text-blue-500">About</button>
-        <button onClick={() => handleNavigation('#projects')} className="hover:text-blue-500">Projects</button>
-        <button onClick={() => handleNavigation('#contact')} className="hover:text-blue-500">Contact</button>
+        <button onClick={() => handleNavigation('/')} className={`opacity-50 ${isActive('/')}`}>Home</button>
+        <button onClick={() => handleNavigation('/about')} className={`opacity-50 ${isActive('/about')}`}>About</button>
+        <button onClick={() => handleNavigation('/projects')} className={`opacity-50 ${isActive('/projects')}`}>Projects</button>
+        <button onClick={() => handleNavigation('/contact')} className={`opacity-50 ${isActive('/contact')}`}>Contact</button>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -49,9 +56,10 @@ const Header = () => {
           <GrClose />
         </button>
 
-        <button onClick={() => handleNavigation('#about')} className="hover:text-blue-500 text-xl">About</button>
-        <button onClick={() => handleNavigation('#projects')} className="hover:text-blue-500 text-xl">Projects</button>
-        <button onClick={() => handleNavigation('#contact')} className="hover:text-blue-500 text-xl">Contact</button>
+        <button onClick={() => handleNavigation('/')} className={`opacity-50 text-xl ${isActive('/')}`}>Home</button>
+        <button onClick={() => handleNavigation('/about')} className={`opacity-50 text-xl ${isActive('/about')}`}>About</button>
+        <button onClick={() => handleNavigation('/projects')} className={`opacity-50 text-xl ${isActive('/projects')}`}>Projects</button>
+        <button onClick={() => handleNavigation('/contact')} className={`opacity-50 text-xl ${isActive('/contact')}`}>Contact</button>
       </nav>
     </header>
   );
