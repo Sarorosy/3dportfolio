@@ -46,13 +46,13 @@ const ModelViewer = ({ modelUrl }) => {
 
   const handleTouchStart = (event) => {
     if (event.touches.length === 1) {
-      event.preventDefault();
+      //event.preventDefault();
     }
   };
 
   const handleTouchMove = (event) => {
     if (event.touches.length === 1) {
-      event.preventDefault();
+      //event.preventDefault();
     }
   };
 
