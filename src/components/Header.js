@@ -24,10 +24,10 @@ const Header = () => {
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-4">
-        <button onClick={() => handleNavigation('/')} className={`opacity-50 ${isActive('/')}`}>Home</button>
-        <button onClick={() => handleNavigation('/about')} className={`opacity-50 ${isActive('/about')}`}>About</button>
-        <button onClick={() => handleNavigation('/projects')} className={`opacity-50 ${isActive('/projects')}`}>Projects</button>
-        <button onClick={() => handleNavigation('/contact')} className={`opacity-50 ${isActive('/contact')}`}>Contact</button>
+        <button onClick={() => handleNavigation('/')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/')}`}>Home</button>
+        <button onClick={() => handleNavigation('/about')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/about')}`}>About</button>
+        <button onClick={() => handleNavigation('/projects')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/projects')}`}>Projects</button>
+        <button onClick={() => handleNavigation('/contact')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/contact')}`}>Contact</button>
       </nav>
 
       {/* Mobile Menu Button */}

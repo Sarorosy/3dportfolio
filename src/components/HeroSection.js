@@ -2,10 +2,14 @@
 import React from 'react';
 import ModelViewer from './ModelViewer';
 import Online from './Online';
+import Header from './Header';
+import About from './About';
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white ">
+    <>
+    <Header />
+    <section className="w-full h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white " id="hero">
       {/* Transparent overlay with text */}
       <div className="w-full md:w-1/3 h-1/4 flex flex-col items-center justify-center px-4 mt-5 md:mt-0 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">Hi, I'm Saravanan</h1>
@@ -26,7 +30,8 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-
+    <About/>
+    </>
   );
 };
 

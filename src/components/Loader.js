@@ -17,7 +17,7 @@ const Loader = () => {
         }
         return prev + 1;
       });
-    }, 20); // Adjust timing as necessary
+    }, 15); // Adjust timing as necessary
 
     return () => clearInterval(interval);
   }, []);
