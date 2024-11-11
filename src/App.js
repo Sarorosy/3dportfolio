@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -8,6 +7,7 @@ import MouseFollower from './components/MouseFollower';
 import Loader from './components/Loader';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
+import { motion, AnimatePresence } from 'framer-motion'; // Import framer-motion components
 
 function App() {
   return (
@@ -16,12 +16,42 @@ function App() {
         <div className="App px-1 lg:px-12">
           <Loader />
           
+          <Header /> {/* You can add your Header here */}
+
+          {/* Wrap Routes with AnimatePresence to enable transitions */}
+          <AnimatePresence mode='wait'>
+            <Routes>
+              <Route 
+                path="/" 
+                element={
+                  <motion.div
+                    key="home"
+                    initial={{ opacity: 0 }} // Start with opacity 0
+                    animate={{ opacity: 1 }} // Fade in to full opacity
+                    exit={{ opacity: 0 }} // Fade out when exiting
+                    transition={{ duration: 0.5 }} // Transition duration
+                  >
+                    <HeroSection />
+                  </motion.div>
+                } 
+              />
+              <Route 
+                path="/about" 
+                element={
+                  <motion.div
+                    key="about"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <AboutPage />
+                  </motion.div>
+                } 
+              />
+            </Routes>
+          </AnimatePresence>
           
-          <Routes>
-            <Route path="/" element={<HeroSection />} />
-          <Route path="/about" element={<AboutPage />} />
-            {/* You can add more routes here */}
-          </Routes>
           <MouseFollower />
         </div>
       </ThemeProvider>

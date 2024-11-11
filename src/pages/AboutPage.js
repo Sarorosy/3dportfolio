@@ -5,7 +5,7 @@ function AboutPage() {
   return (
     <>
     <Header />
-    <h1>Hello</h1>
+    <div className='mt-12'>Hello</div>
     </>
   )
 }
