@@ -29,7 +29,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <div ref={containerRef} className="p-6 max-w-2xl relative border rounded-lg shadow-md bg-white mx-auto">
+    <div ref={containerRef} className="p-6 max-w-2xl relative border rounded-lg shadow-md bg-white mx-auto mt-8">
       <div className="absolute top-3 left-3 flex space-x-2">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>

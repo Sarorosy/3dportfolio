@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 flex flex-col justify-between h-screen">
 
             <div className="container mx-auto max-w-5xl" id="footer" style={{margin:"auto 0px"}}>
-                <div className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800  p-4 md:p-12 rounded-3xl" id="secondaryfooter">
+                <div className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800  px-4 py-24 md:px-12 md:py-12 rounded-3xl" id="secondaryfooter">
                     <h2 className="text-2xl md:text-3xl font-light text-center">Looking for a new talent?</h2>
                     <a
                         href="mailto:codersaro@gmail.com"
@@ -15,7 +15,7 @@ export default function Footer() {
                     >
                         codersaro@gmail.com
                     </a>
-                    <div className="flex items-center space-x-8">
+                    <div className="flex items-center space-x-8 mt-8 md:my-1">
                         <div className='group flex items-center relative'>
                             <a
                                 href="https://linkedin.com/in/saro-dev" target="_blank"
