@@ -4,6 +4,7 @@ import ModelViewer from './ModelViewer';
 import Online from './Online';
 import Header from './Header';
 import About from './About';
+import Experience from './Experience';
 
 const HeroSection = () => {
   return (
@@ -31,6 +32,7 @@ const HeroSection = () => {
       </div>
     </section>
     <About/>
+    <Experience />
     </>
   );
 };
