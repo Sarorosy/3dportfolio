@@ -57,7 +57,7 @@ const Header = () => {
       <nav className="flex space-x-4">
         <button onClick={() => handleNavigation('/')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/')}`}>Home</button>
         <button onClick={() => handleNavigation('/about')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/about')}`}>About</button>
-        <button onClick={() => handleNavigation('/contact')} className={`button opacity-50 hover:opacity-100 transition-opacity duration-200 ${isActive('/contact')}`}>Contact</button>
+        
       </nav>
     </header>
   );
