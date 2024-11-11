@@ -59,10 +59,10 @@ export default function About() {
         className="mt-6 flex items-center gap-2 text-white  px-6 py-2 rounded-full relative group mx-auto"
         
       >
-        <div className="absolute left-[-20px] flex items-center justify-center rounded-full bg-white h-2 w-2 group-hover:h-9 group-hover:w-9 transition-all duration-300">
-          <span className="text-[#f179ef] group-hover:inline-block hidden transition-opacity duration-300 font-bold"> <MdArrowOutward /> </span>
+        <div className="absolute left-[-20px] flex items-center justify-center rounded-full bg-rose-500 h-2 w-2 group-hover:h-9 group-hover:w-9 transition-all duration-300">
+          <span className="text-rose-100 group-hover:inline-block hidden transition-opacity duration-300 font-bold"> <MdArrowOutward /> </span>
         </div>
-        <span className="transition-colors duration-300 group-hover:text-[#f179ef]">Read More</span>
+        <span className="transition-colors duration-300 group-hover:text-rose-500">Read More</span>
       </button>
     </div>
   );

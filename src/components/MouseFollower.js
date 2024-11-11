@@ -62,7 +62,7 @@ const MouseFollower = () => {
     });
 
     const addListeners = () => {
-      const links = document.querySelectorAll('button');
+      const links = document.querySelectorAll('button, a');
       links.forEach(link => {
         link.addEventListener('mouseenter', handleMouseEnterLink);
         link.addEventListener('mouseleave', handleMouseLeaveLink);
