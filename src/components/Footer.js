@@ -4,13 +4,14 @@ import { MdArrowOutward } from 'react-icons/md';
 
 export default function Footer() {
     return (
-        <footer className="bg-black text-white pb-8 px-8 pt-24">
-            <div className="container mx-auto max-w-5xl" id="footer">
-                <div className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800 p-12 rounded-3xl" id="secondaryfooter">
-                    <h2 className="text-3xl font-light">Looking for a new talent?</h2>
+        <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 flex flex-col justify-between h-screen">
+
+            <div className="container mx-auto max-w-5xl" id="footer" style={{margin:"auto 0px"}}>
+                <div className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800  p-4 md:p-12 rounded-3xl" id="secondaryfooter">
+                    <h2 className="text-2xl md:text-3xl font-light text-center">Looking for a new talent?</h2>
                     <a
-                        href="mailto:hello@example.com"
-                        className="text-4xl md:text-8xl font-light hover:text-rose-500 transition duration-300"
+                        href="mailto:codersaro@gmail.com"
+                        className="text-3xl md:text-8xl font-light hover:text-rose-500 transition duration-300"
                     >
                         codersaro@gmail.com
                     </a>
