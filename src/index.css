@@ -72,3 +72,13 @@ html, body {
   transform: translateX(-50%); /* Center the dot */
   margin: 0; /* Remove margin for centering */
 }
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+  width: 0; /* Ensures no scrollbar width */
+}

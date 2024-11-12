@@ -31,7 +31,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 h-screen mx-auto flex flex-col justify-between">
-      <div className="container mx-auto max-w-5xl flex-1" id="footer" style={{ margin: "auto auto" }}>
+      <div className="container mx-auto max-w-5xl flex-1 flex" id="footer" style={{ margin: "auto auto" }}>
         <div
           className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800 px-4 py-24 md:px-12 md:py-12 rounded-3xl mx-auto"
           id="secondaryfooter"
