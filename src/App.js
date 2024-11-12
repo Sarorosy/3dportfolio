@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <ThemeProvider>
-        <div className="App px-1 lg:px-12">
+        <div className="App px-1 lg:px-12 overflow-x-hidden">
           <Loader />
           
           <Header /> {/* You can add your Header here */}
