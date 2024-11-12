@@ -9,15 +9,15 @@ export default function Experience() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // GSAP animation for sliding in from the right
+    // GSAP animation for sliding in from the bottom
     gsap.fromTo(
       containerRef.current,
-      { x: 300, opacity: 0 },
+      { y: 100, opacity: 0 },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
-        duration: 1.5,
-        ease: "power4.out",
+        duration: 1.2, // Slightly shorter duration for smoother effect
+        ease: "power3.out", // Power3 is smoother than Power4 for subtle animations
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%", // Trigger when the top of the element hits 80% of the viewport height
@@ -26,7 +26,8 @@ export default function Experience() {
         },
       }
     );
-  }, []);
+}, []);
+
 
   return (
     <div ref={containerRef} className="p-6 max-w-2xl relative border rounded-lg shadow-md bg-white mx-auto mt-8">
