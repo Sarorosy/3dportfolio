@@ -12,12 +12,8 @@ export default function Footer() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Animate footer when it reaches the halfway point
-            window.scrollTo({
-                top: document.documentElement.scrollHeight,
-                behavior: 'smooth',
-              });
+          if (entry.isIntersecting ) {
+            
             gsap.to(secondaryFooter, { y: 0, duration: 1, ease: "power3.out" });
           } else {
             // Reset the footer position when it's out of view
