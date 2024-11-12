@@ -12,29 +12,26 @@ export default function Footer() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting ) {
-            
+          if (entry.isIntersecting) {
             gsap.to(secondaryFooter, { y: 0, duration: 1, ease: "power3.out" });
           } else {
-            // Reset the footer position when it's out of view
             gsap.to(secondaryFooter, { y: '100%', duration: 1, ease: "power3.in" });
           }
         });
       },
       {
-        threshold: 0.5, // This will trigger when 50% of the footer is in view
+        threshold: 0.5, // Trigger when 50% of the footer is in view
       }
     );
     
     observer.observe(footer);
 
-    // Cleanup observer when component unmounts
     return () => observer.disconnect();
   }, []);
 
   return (
-    <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 h-screen mx-auto">
-      <div className="container mx-auto max-w-5xl" id="footer" style={{ margin: "auto auto" }}>
+    <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 h-screen mx-auto flex flex-col justify-between">
+      <div className="container mx-auto max-w-5xl flex-1" id="footer" style={{ margin: "auto auto" }}>
         <div
           className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800 px-4 py-24 md:px-12 md:py-12 rounded-3xl mx-auto"
           id="secondaryfooter"
@@ -78,13 +75,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between text-sm text-white/50 space-y-4 md:space-y-0">
-          <p>©2024 Saravanan.</p>
-          <div className="flex items-center space-x-2">
-            <Online />
-          </div>
-          <p>Made by Saravanan</p>
+      </div>
+      <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center md:items-start justify-between text-sm text-white/50 space-y-4 md:space-y-0">
+        <p>©2024 Saravanan.</p>
+        <div className="flex items-center space-x-2">
+          <Online />
         </div>
+        <p>Made by Saravanan</p>
       </div>
     </footer>
   );
