@@ -16,7 +16,7 @@ export default function Experience() {
       {
         y: 0,
         opacity: 1,
-        duration: 1.2, // Slightly shorter duration for smoother effect
+        duration: 0.6, // Slightly shorter duration for smoother effect
         ease: "power3.out", // Power3 is smoother than Power4 for subtle animations
         scrollTrigger: {
           trigger: containerRef.current,
@@ -27,7 +27,6 @@ export default function Experience() {
       }
     );
 }, []);
-
 
   return (
     <div ref={containerRef} className="p-6 max-w-2xl relative border rounded-lg shadow-md bg-white mx-auto mt-8">

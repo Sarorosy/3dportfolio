@@ -1,42 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useRef,useEffect } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 import Online from './Online';
-import gsap from 'gsap';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function Footer() {
+
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    const footer = document.querySelector('#footer');
-    const secondaryFooter = document.querySelector('#secondaryfooter');
-    
-    // Intersection Observer to detect when footer is halfway visible
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(secondaryFooter, { y: 0, duration: 1, ease: "power3.out" });
-          } else {
-            gsap.to(secondaryFooter, { y: '100%', duration: 1, ease: "power3.in" });
-          }
-        });
-      },
+    // GSAP animation for sliding in from the bottom
+    gsap.fromTo(
+      containerRef.current,
+      { y: 100, opacity: 0 },
       {
-        threshold: 0.5, // Trigger when 50% of the footer is in view
+        y: 0,
+        opacity: 1,
+        duration: 0.6, // Slightly shorter duration for smoother effect
+        ease: "power3.out", // Power3 is smoother than Power4 for subtle animations
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 80%", // Trigger when the top of the element hits 80% of the viewport height
+          end: "top 20%",
+          toggleActions: "play none none reverse",
+        },
       }
     );
-    
-    observer.observe(footer);
-
-    return () => observer.disconnect();
-  }, []);
+}, []);
 
   return (
     <footer className="bg-black text-white pb-8 px-4 md:px-8 pt-24 h-screen mx-auto flex flex-col justify-between">
       <div className="container mx-auto max-w-5xl flex-1 flex" id="footer" style={{ margin: "auto auto" }}>
-        <div
-          className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800 px-4 py-24 md:px-12 md:py-12 rounded-3xl mx-auto"
-          id="secondaryfooter"
-          style={{ transform: 'translateY(100%)' }} // Initially off-screen
-        >
+        <div ref={containerRef}  className="flex flex-col items-center justify-center space-y-8 mb-16 border-2 border-gray-800 px-4 py-24 md:px-12 md:py-12 rounded-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-light text-center">Looking for a new talent?</h2>
           <a
             href="mailto:codersaro@gmail.com"
