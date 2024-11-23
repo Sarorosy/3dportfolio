@@ -28,6 +28,8 @@ export default function Experience() {
     );
 }, []);
 
+
+
   return (
     <div ref={containerRef} className="p-6 max-w-2xl relative border rounded-lg shadow-md bg-white mx-auto mt-8">
       <div className="absolute top-3 left-3 flex space-x-2">

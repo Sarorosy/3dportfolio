@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Saravanan S - Full Stack Developer</title>
+	<meta name="description" content="Hi!, I'm Saravanan - Full Stack Developer. Explore my portfolio and projects to see my expertise. Contact me for collaborations or your next project.">
+	<link rel="canonical" href="https://saravanan.me" />
+	<meta name="google-site-verification" content="I7yn8yffOniwbloh9X4QLUGX7JdVV3AQ0MWGP7nbgqA" />
+        <meta name="author" content="Saravanan">
+	<link rel="shortcut icon" href="favico.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="32.png">
+	<link rel="icon" type="image/png" sizes="24x24" href="24.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="48.png" >
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://saravanan.me" />
+	<meta property="og:image" content="favico.ico" />
+
+	
+	<!--bootstrap css and external stylesheets-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link href="fontcss/all.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+
+
+	<!-- font awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+
+	<!-- Typed animation -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+
+	<!-- swiper css -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+	<!-- animate.css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+	<script type="application/ld+json" defer>
+	    {
+	      "@context": "https://schema.org",
+	      "@type": "Person",
+	      "name": "Saravanan",
+	      "jobTitle": "Full Stack Developer",
+	      "url": "https://saravanan.me",
+	      "sameAs": [
+	        "https://www.linkedin.com/in/saro-dev",
+	        "https://github.com/saro-dev"
+	      ]
+	    }
+  	</script>
+
+</head>
+
+
+<body>
+	<button id="scrollToTopBtn" onclick="scrollToTop()"><i class="fad fa-arrow-to-top"></i></button>
+
+	<div class="loadcon">
+		<div class="loadtext">
+			<h5>Welcome to the</h5>
+		</div>
+		<div class="loadtext">
+			<h5>POrtfolio of</h5>
+		</div>
+		<div class="loadtext">
+			<h5>Saravanan!</h5>
+		</div>
+		<ul class="blocks">
+				<li class="block-1 block"></li>
+				<li class="block-2 block"></li>
+				<li class="block-3 block"></li>
+				<li class="block-4 block"></li>
+				<li class="block-5 block"></li>
+				<li class="block-6 block"></li>
+			</ul>
+	</div>
+	<canvas id="noise" class="noise"></canvas>
+
+	<div class="cursor">
+		<div class="box" style="opacity: 1; transform: matrix(0, 0, 0, 0, 397, 544);"></div>
+		<div class="box hover" style="opacity: 1; transform: matrix(0, 0, 0, 0, 397, 544);"></div>
+		<div class="drag" style="transform: matrix(0, 0, 0, 0, 218, 549);">
+			<div class="next" style="opacity: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14">
+					<path d="M1,14a1,1,0,0,1-.71-1.71L5.59,7,0.29,1.71A1,1,0,0,1,1.71.29l6,6a1,1,0,0,1,0,1.41l-6,6A1,1,0,0,1,1,14Z" class="cls-1"></path>
+				</svg></div>
+			<div class="prev" style="opacity: 0;"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14">
+					<path d="M7,0a1,1,0,0,1,.71,1.71L2.41,7l5.29,5.29a1,1,0,1,1-1.41,1.41l-6-6a1,1,0,0,1,0-1.41l6-6A1,1,0,0,1,7,0Z" class="cls-1"></path>
+				</svg></div>
+		</div>
+		<div class="tooltipCursor">
+
+		</div>
+	</div>
+	<div class="music">
+
+	</div>
+	<!-- Nav Bar -->
+	<nav>
+		<div class="logo">
+			<div id="imgborder">
+				<img id="playpause" src="musicicon.png" >
+			</div>
+			<h4 class=""><i class="fas fa-angle-left"></i>Saro<span style="font-family: sans-serif;">/</span><i class="fas fa-angle-right"></i></h4>
+		</div>
+		<ul class="nav-links">
+			<li class="navli"><a onclick="jumpTo('#title')" href="#title"><span class="navlinkspan">Home</span></a></li>
+			<li class="navli"><a onclick="jumpTo('#about')" href="#about"><span class="navlinkspan">About</span></a></li>
+			<li class="navli"><a onclick="jumpTo('#skills')" href="#skills"><span class="navlinkspan">Skills</span></a></li>
+			<li class="navli"><a onclick="jumpTo('#projects')" href="#projects"><span class="navlinkspan">Projects</span></a></li>
+			<li class="navli"><a onclick="jumpTo('#contact')" href="#contact"><span class="navlinkspan">Contact</span></a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+
+<div id="luxy">
+	<main class="skew">
+		<section id="title" >
+			
+			<!---Title -->
+			<div class="heading">
+				<img class="hide-img" alt="saravanan full stack developer" src="new-profile.jpg" >
+				<div class="title-img">
+					<img class="hoverimg1 showimg tit-img" src="profile.jpg" >
+					<img class="hoverimg2 tit-img" src="two.jpg" >
+					<img class="hoverimg3 tit-img" src="three.jpg" >
+					<img class="hoverimg4 tit-img" src="location.jpg" >
+					<img class="hoverimg5 tit-img" src="one.jpg" >
+				</div>
+				<div class="heading-child-1">
+					<div class="title-box-1">
+						<h5 class="welcome"><span id="neonthis1" class="hidden5 showtext5">WELCOME.</span><h3>
+						<div class="h1div">
+							<h2 style="font-size: 3rem;"><span class="h1span hidden1 showtext1" style="margin-bottom: 10px;">Hi, I'm</span></h2>
+							<h1 style="font-size: 3rem;"><span class="hidden1 showtext1">Saravanan<span class="h1fs"> !</span></span></h1>
+							<p class="hidden1 showtext1" style="font-size: 1rem;color: ghostwhite;">But, you can call me <span id="neonthiss">Saro</span></p>
+							
+						</div>
+					</div>
+
+					<div class="title-box-2">
+						<div class="h2div">
+							<h2><span class="h2span hidden2 showtext2">I create</span></h2>
+							<h2><span class=" h2span hidden2 showtext2">amazing</span></h2>
+							<h2><span class="hidden2 showtext2">experiences<span class="h2fs">.</span></span></h2>
+							</div>
+						<h5 class="loc"><span id="neonthis2" class="hidden4 showtext4">12.7977° N, 79.7866° E</span><h3>
+					</div>
+				</div>
+
+				<div class="heading-child-2">
+					<div class="title-box-3">
+						<h3 class="h31" style="font-size: 4rem;">
+							<div class="showtext3">Full Stack</div>
+						</h3>
+						<h3 class="h32" style="font-size: 5rem;">
+							<div class="showtext3">Developer <i class="fal fa-code"></i></div>
+						</h3>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- About -->
+		<section id="about">
+			<div class="about-parent">
+				<div class="about-child-1">
+					<div class="myimg" data-aos="zoom-in" data-aos-duration="2000">
+						<img class=" profilepic" alt="Saravanan full stack developer" src="new-profile.jpg"  >
+					</div>
+				</div>
+
+				<div class="description about-child-2">
+					<h3><span class="spanheading">About Me &nbsp<i class="fad fa-vector-square" data-lax-preset="spin-360"></i></span></h3>
+					<p data-aos="fade-up" data-aos-duration="1000">I am a Programmer and a Self-taught Web Developer. I drink coffee, I eat pizza. I write code and improve
+						my design and skills every day.<br>A firm believer in learning through experience.</p>
+					<div class="aboutimg">
+						<img class="about-pic" src="about.svg" >
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Skills -->
+		<section id="skills">
+			<div class="skills-parent">
+				<div class="skills-child-1">
+					<h3><span class="spanheading">Skills &nbsp<i class="fad fa-vector-square" data-lax-preset="spinRev-360"></i></span></h3>
+					<p data-aos="fade-up" data-aos-duration="1000">I have a great understanding in Data Structures & Algorithms and an efficient coder in JavaScript, React, HTML, CSS, Java and C/C++. I know how to create
+						your website to run across devices using the latest technologies available.</p>
+					<a href="Saravanan's Resume-2.pdf" target="_blank"><button class="rbtn" type="button" name="button"><i class="fal fa-download"></i>&nbspResume</button></a>
+					<div class="skillsimg">
+						<img class="skills-pic" src="skills.svg" >
+					</div>
+				</div>
+				<div class="skills-child-2">
+					<span class="Sphere"></span>
+					<!-- <ul>
+						<li class="react">React (70%)</li>
+						<li class="html">HTML (95%)</li>
+						<li class="css">CSS (90%)</li>
+						<li class="js">JAVASCRIPT (85%)</li>
+						<li class="java">JAVA (90%)</li>
+						<li class="c">C/C++ (90%)</li>
+						<li class="ui">UX/UI DESIGN (95%)</li>
+					</ul> -->
+				</div>
+			</div>
+		</section>
+
+		<section class="container" id="experience">
+			<div class="row">
+				<section class="col">
+					<header class="tit">
+						<h2>EDUCATION</h2>
+					</header>
+					<div class="contents">
+						<div class="boxx">
+							<h4 class="year">2021 - 2024</h4>
+							<h3 class="topics"  style="font-size: 20px;">BCA (Bachelor of Computer Applications)</h3>
+							<p class="year">Final Year , Expected Graduation: 2024</p>
+						</div>
+						<div class="boxx">
+							<h4 class="year">2019 - 2020</h4>
+							<h3 class="topics">High School</h3>
+							<p class="year">I successfully completed my Higher Secondary Certificate (HSC) in 2020 with an outstanding score of 87%.</p>
+						</div>
+						<div class="boxx">
+							<h4 class="year">2016</h4>
+							<h3 class="topics">SSLC</h3>
+							<p class="year">I completed my Secondary School Leaving Certificate (SSLC) in 2016 with 89%</p>
+						</div>
+					</div>
+				</section>
+				<section class="col">
+					<header class="tit">
+						<h2>EXPERIENCE</h2>
+					</header>
+					<div class="contents">
+						<div class="boxx">
+							<h4 class="year">July-Aug 2023</h4>
+							<h3 class="topics">Bharat Intern</h3>
+							<p class="year">Full Stack Developer-Intern</p>
+						</div>
+						<div class="boxx">
+							<h4  class="year">Jun-July 2023</h4>
+							<h3 class="topics">Oasis Infobyte</h3>
+							<p class="year">Full Stack Developer-Intern</p>
+						</div>
+						<div class="boxx">
+							<h4 class="year">May-Jun 2023</h4>
+							<h3  class="topics">Growth ninja</h3>
+							<p class="year">Web Developer-Intern</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>					
+
+		<!-- Projects -->
+		<section id="projects">
+				<div class="projects-child">
+					<h3><span class="spanheading">Recent Projects &nbsp<i class="fad fa-vector-square" data-lax-preset="spinRev-360"></i></span></h3>
+					<div class="project-content">
+						<div class="project-border">
+							<div class="project-card project-image-view-box">
+								<div class="project-img-box">
+									<img class="project-img" src="project-1.png" alt="project 1 image">
+								</div>
+								<div class="project-desc">
+									<p>"Recipeeze is a MERN stack web application designed to enable users to discover, post, and interact with recipes. Users can explore a wide variety of recipes posted by others, engage with the community through likes and comments, and contribute their own culinary creations to the platform."</p>	
+								</div>
+								<a href="https:/recipeeze.vercel.app" target="_blank"><button class="project-btn" type="button" name="button">View Project</button></a>
+							</div>
+						</div>
+
+						<div class="project-border">
+							<div class="project-card project-image-view-box">
+								<div class="project-img-box">
+									<img class="project-img" src="project-2.png" alt="project 2 image">
+								</div>
+								<div class="project-desc">
+									<p>"LUNA is a Python Voice Assistant that enables seamless voice-controlled interactions, both offline and online. Leveraging advanced natural language processing and speech recognition technologies, LUNA empowers users to perform a variety of tasks using voice commands.
+										"</p>
+									<a href="https://github.com/saro-dev/luna_ai" target="_blank"><button class="project-btn" type="button" name="button">View Project</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project-content">
+
+						<div class="project-border">
+							<div class="project-card project-image-view-box">
+								<div class="project-img-box">
+									<img class="project-img" src="project-3.png" alt="project 3 image">
+								</div>
+								<div class="project-desc">
+									<p>"Resumate is a dynamic resume builder website developed using PHP and MySQL, designed to streamline the process of creating professional resumes. With Resumate, users can easily craft customized resumes tailored to their career goals and aspirations."</p>
+									<a href="https:/github.com/saro-dev/resume-builder/" target="_blank"><button class="project-btn" type="button" name="button">View Project</button></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="project-border">
+							<div class="project-card project-image-view-box">
+								<div class="project-img-box">
+									<img class="project-img" src="project-4.jpg" alt="project 3 image">
+								</div>
+								<div class="project-desc">
+									<p>"Unlock a world of culinary inspiration with our recipe generator website. Discover new flavors, unleash your creativity, and embark on a delightful journey of cooking delicious dishes from diverse cuisines."</p>
+									<a href="https://saro-dev.github.io/recipe.github.io/" target="_blank"><button class="project-btn" type="button" name="button">View Project</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</section>
+
+		<canvas id="c"></canvas>
+
+
+		<br>
+		<br>
+
+
+		<!-- Contact -->
+		<section id="contact">
+			<div class="contact-box">
+				<div class="content">
+					<div class="image-box">
+						<img src="contact.svg" >
+					</div>
+					<form action="https://formspree.io/f/mrgwzraw" method="POST">
+						<div class="topic">
+							<h3>Get In Touch !</h3>
+						</div>
+						<div class="input-box">
+							<input type="text" name="Name:" id="name"  required>
+							<label>Your Name</label>
+						</div>
+						<div class="input-box">
+							<input type="text" name="E-mail:" id="email" required>
+							<label>Your E-mail</label>
+						</div>
+						<br>
+						<div class="message-box">
+							<textarea rows="4" name="Message:" id="Message" required></textarea>
+							<label>Your Message</label>
+						</div>
+						<br>
+						<div class="input-box">
+							<input class="submitbtn" type="submit" value="Submit" method="post">
+						</div>
+					</form>
+					<div class="icons">
+						<div class="icons-inner">
+							<a href="https://t.me/Shyam_Rosi" target="_blank"><i id="tele" class="social-icons fab fa-telegram fa-2x"></i></a>
+							<a href="https://twitter.com/MyntSlush?s=09" target="_blank"><i id="github" class="social-icons fab fa-github fa-2x"></i></a>
+							<a href="https://www.linkedin.com/in/saro-dev" target="_blank"><i id="linked" class="social-icons fab fa-linkedin fa-2x"></i></a>
+							<a href="https://www.instagram.com/i____voltage/" target="_blank"><i id="insta" class="social-icons fab fa-instagram fa-2x"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<br>
+	<!-- Footer -->
+	<section id="footer">
+		<div id="footer">
+			<p class="mention">Designed and Developed with  <img src="heart.png" >  by ME.</p>
+			<p class="old"><a href="https://saro-dev.netlify.app">Click to see My Version-1 Portfolio <i class="fad fa-history"></i></a></p>
+			<p class="copyright"><i class="far fa-copyright fa-sm"></i> Copyright 2021 Saravanan </p>
+		</div>
+	</section>
+
+
+	<!-- animate on scroll js and css files -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.0.2/aos.css" integrity="sha512-ksbpl5EUb4HLEKUNItsPMT/Ih6KcISE53GbYOu3xFUVYvTSSX5AJxTI2aigdQm9uNSkSsRMHsSGNKppkt691lw==" crossorigin="anonymous"
+		referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.0.2/aos.js" integrity="sha512-678bHRnILWQudsPcjDbSoYtwimEk8yPq7BBWeJaFoSHPf7Ob7N7au8M49yY9Wbpmmi0PvDzf3Rca1mbmYQLAxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js" integrity="sha512-+LXqbM6YLduaaxq6kNcjMsQgZQUTdZp7FTaArWYFt1nxyFKlQSMdIF/WQ/VgsReERwRD8w/9H9cahFx25UDd+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"> </script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js" integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js" integrity="sha512-/8phkpsAzxsbuX18zNkQ2gCq4Q5JsWoPo1jHLDeZorPUHRtx9YJxpdk+os05oDhPJVCNzA2/NMl4rmJyQ+6Fvg==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js" integrity="sha512-I0VFyPo7hdM7YrEbQ0pvX4bX2904k0+B19u/xBrPrQoMprfcSnIDfGFD8kP52GbAhwtDjkEVhXlQvj8+vkJyew==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js" integrity="sha512-ht40uOoiTef4nKq0THVzjIGh3VS108J577LVVgNXnQLXza3doXjoM3owin2vd+Hm6w88k12RIrePIVY2WNzz6Q==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js" integrity="sha512-oOy5+mtZRcqjn6b9k4oj+tk2/hVIetzOAM9Y5cndEHgLxiIGavAz1agbHf6JjGzxXZ2SMbu08Uy1DDF0UwA0qQ==" crossorigin="anonymous"></script>
+	<script src="jquery.novacancy.min.js" defer></script>
+	<script src="luxy.min.js" defer></script>
+	<script src="script.js" defer></script>
+	
+
+	
+
+
+	<audio src="Grateful(PaglaSongs).mp3" id="song" type="audio/mp3"></audio>
+</div>
+</body>
+
+</html>

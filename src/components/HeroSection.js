@@ -5,8 +5,12 @@ import Online from './Online';
 import Header from './Header';
 import About from './About';
 import Experience from './Experience';
-import Projects from './Projects';
 import Footer from './Footer';
+import DynamicIconCloud from './IconCloudDemo';
+
+
+
+
 
 const HeroSection = () => {
   return (
