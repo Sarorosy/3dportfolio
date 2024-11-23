@@ -54,5 +54,12 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.10"
+  },
+  "proxy": {
+  "/v2": {
+    "target": "http://localhost:3000",
+    "pathRewrite": { "^/v2": "/v2/index.html" }
   }
+}
+
 }
