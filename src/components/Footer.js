@@ -1,6 +1,7 @@
 import React, { useRef,useEffect } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 import Online from './Online';
+import myResume from '../assets/SaravananResume.pdf';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -58,8 +59,9 @@ export default function Footer() {
             </div>
             <div className="group flex items-center relative">
               <a
-                href="https://linkedin.com/in/saro-dev"
+                href={myResume}
                 target="_blank"
+                download="Saravanan's Resume"
                 className="text-white/75 hover:text-white transition-colors ml-12"
               >
                 Download CV
