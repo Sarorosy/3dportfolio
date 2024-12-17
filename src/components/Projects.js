@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CircleX } from "lucide-react";
+import { CircleX, SquareArrowUpRight } from "lucide-react";
 
 const projectsData = [
   {
@@ -119,63 +119,66 @@ export default function Projects() {
 
       {/* Bottom Bar */}
       <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            initial={{ y: "100%" }}
-            animate={{ y: "10px" }} // 70% visible from the bottom
-            exit={{ y: "100%" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="fixed bottom-0 left-0 w-full bg-gray-900 text-gray-300 shadow-2xl rounded-t-2xl py-6 px-24 h-[85%] max-h-[85%] overflow-y-auto z-50"
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeProjectDetails}
-              className="absolute top-2 right-4 text-2xl font-bold text-white duration-300 hover:text-red-700"
-            >
-              <CircleX />
-            </button>
+  {selectedProject && (
+    <motion.div
+      initial={{ y: "100%" }}
+      animate={{ y: "10px" }} // 70% visible from the bottom
+      exit={{ y: "100%" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed bottom-0 left-0 w-full bg-gray-900 text-gray-300 shadow-2xl rounded-t-2xl py-6 px-12 md:px-24 h-[85%] max-h-[85%] overflow-hidden z-50"
+    >
+      {/* Close Button */}
+      <button
+        onClick={closeProjectDetails}
+        className="fixed top-4 right-4 text-2xl font-bold text-white duration-300 hover:text-red-700 z-50"
+      >
+        <CircleX />
+      </button>
 
-            {/* Project Details */}
-            <div className="flex flex-col md:flex-row items-start gap-6">
-              {/* Image */}
-              <img
-                src={selectedProject.desc_image ? selectedProject.desc_image : selectedProject.image}
-                alt={selectedProject.title}
-                className="w-48 h-48 object-cover rounded-lg shadow-md"
-              />
-              {/* Text Details */}
-              <div>
-                <h2 className="text-2xl font-bold mb-3">
-                  {selectedProject.title}
-                </h2>
-                <p className="text-gray-500 mb-4 text-lg">
-                  {selectedProject.description}
-                </p>
-                {selectedProject.key_features && selectedProject.key_features.length > 0 && (
-                  <div>
-                    <h3 className="text-xl font-semibold mt-4 mb-2">Key Features:</h3>
-                    <ul className="list-disc pl-5">
-                      {selectedProject.key_features.map((feature, index) => (
-                        <li key={index} className="text-gray-300 text-md">
-                          <strong>{feature.title}:</strong> <span className="text-gray-500">{feature.description}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <a
-                  href={selectedProject.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-purple-500 text-white font-medium py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-                >
-                  Visit Live Link
-                </a>
-              </div>
+      {/* Project Details */}
+      <div className="flex flex-col md:flex-row items-start gap-6 h-full overflow-y-auto">
+        {/* Image */}
+        <img
+          src={selectedProject.desc_image ? selectedProject.desc_image : selectedProject.image}
+          alt={selectedProject.title}
+          className="w-48 h-48 object-cover rounded-lg shadow-md"
+        />
+        {/* Text Details */}
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold mb-3 flex items-center">
+            {selectedProject.title}
+
+            <a
+            href={selectedProject.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-blue-700 flex items-center font-medium py-2 px-4 rounded hover:underline text-sm transition-colors"
+          >
+         Live Link <SquareArrowUpRight size={15} className="text-blue-600 ml-2" />
+          </a>
+          </h2>
+          <p className="text-gray-500 mb-4 text-lg">
+            {selectedProject.description}
+          </p>
+          {selectedProject.key_features && selectedProject.key_features.length > 0 && (
+            <div>
+              <h3 className="text-xl font-semibold mt-4 mb-2">Key Features:</h3>
+              <ul className="list-disc pl-5">
+                {selectedProject.key_features.map((feature, index) => (
+                  <li key={index} className="text-gray-300 text-md">
+                    <strong>{feature.title}:</strong> <span className="text-gray-500">{feature.description}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+          
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </div>
   );
 }
