@@ -51,31 +51,195 @@ const projectsData = [
         "description": "Whether you're a beginner or a professional chef, Recipeeze helps you build your presence online by showcasing your recipes to a large community. The badge system adds a layer of gamification, encouraging users to keep posting and sharing their culinary expertise."
       }
     ],
+    "no_image" : false,  
+    "fit" : false,
     "image": "https://recipeeze.vercel.app/static/media/banner.567983a17575cb12fda5.webp",
     "desc_image": "https://recipeeze.vercel.app/static/media/splash.838841d37b0dc855932c.png",
     "liveLink": "https://recipeeze.vercel.app"
   },
   {
-    id: 2,
-    title: "Project Two",
-    description: "This is the second project description.",
-    image: "https://via.placeholder.com/400",
-    liveLink: "https://example.com/project-two",
+    "id": 2,
+    "title": "Service Providers Panel",
+    "description": "The Service Providers Panel is a comprehensive web application designed for managing freelance work, employee attendance, daily work details, profiles, leave balances, holidays, and notifications. It provides a centralized system for both employees and administrators to track, manage, and update work details, attendance, leaves, and more. The platform also includes an admin panel to manage service providers, add notifications, manage holidays, and perform other administrative tasks.",
+    "key_features": [
+      {
+        "title": "Freelancer Management",
+        "description": "Admins can easily manage and track the work details of freelancers, including task assignments, progress tracking, and performance metrics."
+      },
+      {
+        "title": "Attendance Tracking",
+        "description": "The platform allows employees to mark attendance and sign off. Admins can track employee working hours and attendance history."
+      },
+      {
+        "title": "Daily Work Details",
+        "description": "Employees can log their daily work details, including tasks completed and time spent on each project. Admins have access to these logs for better management."
+      },
+      {
+        "title": "Profile Management",
+        "description": "Users can update their personal profiles with details such as name, contact information, work history, and more. Admins can also view and manage user profiles."
+      },
+      {
+        "title": "Leave Management",
+        "description": "Employees can request leaves and track their leave balances. Admins can approve or reject leave requests, and users can view their leave history."
+      },
+      {
+        "title": "Notifications",
+        "description": "Both users and admins can send and receive notifications related to attendance, leave requests, work updates, and other important announcements."
+      },
+      {
+        "title": "Holiday Management",
+        "description": "Admins can manage company holidays, allowing employees to know the official days off in advance."
+      },
+      {
+        "title": "Admin Panel",
+        "description": "The admin panel allows for managing service providers, viewing and editing user details, managing notifications, holidays, and performing other administrative tasks."
+      }
+    ],
+    "why_service_providers_panel": [
+      {
+        "title": "Centralized Management",
+        "description": "Service Providers Panel offers a centralized platform for managing freelancers, employees, and administrative tasks, streamlining operations and increasing efficiency."
+      },
+      {
+        "title": "Comprehensive Leave and Attendance Tracking",
+        "description": "The leave management and attendance tracking systems are fully integrated, allowing for real-time updates and accurate records for both users and administrators."
+      },
+      {
+        "title": "User-Friendly Interface",
+        "description": "The platform features an intuitive and easy-to-use interface, making it accessible for both freelancers and admins to perform their tasks with ease."
+      },
+      {
+        "title": "Detailed Reports & Analytics",
+        "description": "Admins can generate reports on attendance, leaves, work logs, and more to assess performance and make informed decisions."
+      }
+    ],
+    "fit" : false,
+    "no_image" : true,    
+    "liveLink": "https://service-providers-panel.vercel.app"
+  },
+  
+  {
+    "id": 3,
+    "title": "VDASolutions HRMS",
+    "description": "VDASolutions HRMS is a comprehensive human resource management software built to streamline the management of employees, attendance, salary, payroll, departments, roles, leave balances, parking, positions, notes, complaints, and more. It provides both employees and administrators with a centralized platform for tracking, managing, and optimizing HR processes. The software includes detailed reporting, attendance tracking, payroll management, and a user-friendly admin panel for managing the system efficiently.",
+    "key_features": [
+      {
+        "title": "Employee Management",
+        "description": "Easily manage employee profiles, personal information, roles, positions, and departments. Track performance and store important documents such as resumes and contracts."
+      },
+      {
+        "title": "Attendance & Leave Management",
+        "description": "Track employee attendance, manage leave requests, and maintain accurate leave balances. Admins can approve or reject leaves, while employees can view their attendance history."
+      },
+      {
+        "title": "Salary & Payroll Management",
+        "description": "Manage salary details, generate pay slips, and handle payroll processes, ensuring timely payments. The system can also generate salary reports for administrators."
+      },
+      {
+        "title": "Department & Role Management",
+        "description": "Create and manage different departments and assign roles to employees. Track departmental performance and manage team structures."
+      },
+      {
+        "title": "Position Tracking",
+        "description": "Monitor employee positions within the organization, including promotions, transfers, and role changes. Maintain position history for reporting and analysis."
+      },
+      {
+        "title": "Parking Management",
+        "description": "Allocate parking spaces to employees and track usage. Employees can request parking slots, and admins can manage approvals and availability."
+      },
+      {
+        "title": "Complaint Management",
+        "description": "Allow employees to file complaints, track their progress, and manage resolutions. Admins can view, assign, and close complaints as part of the issue resolution process."
+      },
+      {
+        "title": "Admin Panel",
+        "description": "Admins have full control over the HRMS system, with capabilities to manage employees, view reports, and perform administrative tasks such as approving leave requests, assigning roles, and generating reports."
+      }
+    ],
+    "why_vdasolutions_hrms": [
+      {
+        "title": "Centralized HR Management",
+        "description": "VDASolutions HRMS centralizes all HR processes in one platform, reducing administrative burden and increasing efficiency for both HR professionals and employees."
+      },
+      {
+        "title": "Comprehensive Reporting",
+        "description": "Generate detailed reports on attendance, payroll, employee performance, complaints, and more to make data-driven decisions and streamline HR operations."
+      },
+      {
+        "title": "Employee Empowerment",
+        "description": "Employees have access to manage their profiles, track attendance, apply for leave, and view salary details, enhancing transparency and engagement."
+      },
+      {
+        "title": "Scalable & Customizable",
+        "description": "The system is flexible, allowing organizations of all sizes to tailor the platform according to their specific needs. Whether it’s managing a small team or a large organization, VDASolutions HRMS adapts."
+      }
+    ],
+    "no_image": false,
+    "image": "https://ryupunch.com/vda/assets/images/vda-logo.png",
+    "desc_image": "https://ryupunch.com/vda/assets/images/vda-logo.png",
+    "liveLink": "https://ryupunch.com/vda",
+    "fit" : true,
+    "fitcolor" : "#000034"
   },
   {
-    id: 3,
-    title: "Project Three",
-    description: "This is the third project description.",
-    image: "https://via.placeholder.com/400",
-    liveLink: "https://example.com/project-three",
-  },
-  {
-    id: 4,
-    title: "Project Four",
-    description: "This is the fourth project description.",
-    image: "https://via.placeholder.com/400",
-    liveLink: "https://example.com/project-four",
-  },
+    "id": 1,
+    "title": "Complaints Management System",
+    "description": "A web application that allows users to register complaints, and admins to manage and assign complaints to agents. Agents can resolve complaints and update the status. Notifications are sent to the admin, user, and agent when a complaint is submitted, assigned, or resolved.",
+    "key_features": [
+      {
+        "title": "Complaint Registration",
+        "description": "Users can register complaints with relevant details, which will be logged into the system for review by the admin."
+      },
+      {
+        "title": "Admin Dashboard",
+        "description": "Admins can view all complaints, assign complaints to agents, track progress, and update complaint statuses."
+      },
+      {
+        "title": "Agent Assignment",
+        "description": "Admins can assign complaints to specific agents, who will be responsible for resolving them and updating the status."
+      },
+      {
+        "title": "Complaint Resolution",
+        "description": "Agents can update the status of complaints to 'resolved' once they have been addressed."
+      },
+      {
+        "title": "Notification System",
+        "description": "The system sends real-time notifications to the user, agent, and admin when a complaint is submitted, assigned, or resolved."
+      },
+      {
+        "title": "Complaint History",
+        "description": "All complaints are stored with detailed logs, including actions taken, resolution status, and timestamps."
+      },
+      {
+        "title": "Role-based Access",
+        "description": "Different roles (user, admin, agent) have specific access and capabilities within the system."
+      }
+    ],
+    "why_complaints_management_system": [
+      {
+        "title": "Efficient Complaint Resolution",
+        "description": "This system helps streamline the complaint management process, ensuring that complaints are resolved quickly and effectively by the right agent."
+      },
+      {
+        "title": "Centralized Tracking",
+        "description": "The system offers a centralized platform for tracking all complaints, making it easier to monitor progress and ensure timely resolutions."
+      },
+      {
+        "title": "Real-Time Notifications",
+        "description": "Real-time notifications ensure that all parties are informed of updates related to complaints, helping to improve communication and transparency."
+      },
+      {
+        "title": "Improved User Satisfaction",
+        "description": "By allowing users to track the status of their complaints and ensuring timely resolution, the system aims to enhance user satisfaction."
+      }
+    ],
+    "fit": true,
+    "fitcolor":"#fed7be",
+    "no_image": false,
+    "image" : "https://img.freepik.com/free-vector/flat-design-person-making-complain_23-2148959890.jpg",
+    "liveLink": "https://complaintss.vercel.app"
+  }
+  
 ];
 
 export default function Projects() {
@@ -100,17 +264,26 @@ export default function Projects() {
         {projectsData.map((project) => (
           <div
             key={project.id}
-            className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md bg-white"
+            className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md  "
+            style={{
+              backgroundColor: project.fit == true ? project.fitcolor : 'white'
+            }}
             onClick={() => handleProjectClick(project)}
           >
-            {/* Project Image */}
+            {project.no_image == false ? (
             <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-            />
+            src={project.image}
+            alt={project.title}
+            className={`w-full h-48 ${project.fit === false ? "object-cover" : "object-contain"} group-hover:scale-105 transition-transform duration-300`}
+          />
+          
+          ) :(
+            <div className="w-full h-48 text-black bg-blue-200 text-4xl text-center font-bold flex items-center justify-center object-cover group-hover:scale-105 transition-transform duration-300">
+              {project.title}
+            </div>
+          )}
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+            <div className="absolute inset-0 bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
               <p className="text-white font-semibold text-lg">{project.title}</p>
             </div>
           </div>
@@ -132,17 +305,23 @@ export default function Projects() {
         onClick={closeProjectDetails}
         className="fixed top-4 right-4 text-2xl font-bold text-white duration-300 hover:text-red-700 z-50"
       >
-        <CircleX />
+        <CircleX size={30}/>
       </button>
 
       {/* Project Details */}
       <div className="flex flex-col md:flex-row items-start gap-6 h-full overflow-y-auto">
         {/* Image */}
-        <img
+        {selectedProject.no_image == false ? (
+          <img
           src={selectedProject.desc_image ? selectedProject.desc_image : selectedProject.image}
           alt={selectedProject.title}
           className="w-48 h-48 object-cover rounded-lg shadow-md"
         />
+        ) : (
+          <div className="w-48 h-48 text-black bg-blue-200 text-4xl text-center font-bold flex items-center justify-center object-cover group-hover:scale-105 transition-transform duration-300">
+          {selectedProject.title}
+        </div>
+        )}
         {/* Text Details */}
         <div className="flex-1">
           <h2 className="text-2xl font-bold mb-3 flex items-center">
