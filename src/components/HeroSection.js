@@ -7,7 +7,7 @@ import About from './About';
 import Experience from './Experience';
 import Footer from './Footer';
 import DynamicIconCloud from './IconCloudDemo';
-
+import Projects from './Projects';
 
 
 
@@ -39,6 +39,7 @@ const HeroSection = () => {
     </section>
     <About/>
     <Experience />
+    <Projects />
     <Footer />
     </>
   );

@@ -18,7 +18,7 @@ function App() {
         <Loader />
         <Header />
         <MouseFollower />
-        
+
         {/* Add AnimatePresence for transitions */}
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
@@ -74,10 +74,13 @@ const PageWrapper = ({ children, title }) => {
           exit={{ opacity: 0, y: -50 }} // Exit animation
           transition={{ duration: 0.6, ease: "easeOut" }}
           style={{
+            display: 'flex',
+            justifyContent: 'center', // Horizontally center
+            alignItems: 'center', // Vertically center
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -50%)', // Move element to exact center
             color: '#fff',
             fontSize: '2.5rem',
             fontWeight: 'bold',
@@ -87,8 +90,9 @@ const PageWrapper = ({ children, title }) => {
         >
           {title}
         </motion.h1>
+
       </motion.div>
-      
+
       {/* Content animation */}
       <motion.div
         initial={{ opacity: 0 }}
