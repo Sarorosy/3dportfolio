@@ -8,12 +8,14 @@ import Loader from './components/Loader';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
 import { motion, AnimatePresence } from 'framer-motion'; // Import framer-motion components
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const location = useLocation(); // Get current route location
 
   return (
     <ThemeProvider>
+      <ScrollToTop />
       <div className="App px-1 lg:px-12 overflow-x-hidden">
         <Loader />
         <Header />
