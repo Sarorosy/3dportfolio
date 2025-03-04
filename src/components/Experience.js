@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { CheckCircle2,  GitMerge, Star } from "lucide-react";
+import { CheckCircle2, GitMerge, Star } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -26,7 +26,7 @@ export default function Experience() {
         },
       }
     );
-}, []);
+  }, []);
 
 
 
@@ -40,7 +40,7 @@ export default function Experience() {
       <h1 className="text-3xl font-bold mb-8 text-center text-black">Work Experience</h1>
       <h2 className="text-2xl font-bold mb-6 mt-4 text-black">Experience</h2>
       <div className="space-y-8">
-        
+
         {/* Experience 1 */}
         <div className="relative">
           <div className="flex items-start">
@@ -51,19 +51,19 @@ export default function Experience() {
               <div className="absolute top-full left-1/2 w-8 h-8 border-l-2 border-b-2 border-emerald-500 rounded-bl-xl -translate-x-1/2"></div>
             </div>
             <div className="space-y-1 pt-1">
-            <div className="font-medium text-black flex items-center">
-  ELK Education Consultants Pvt. Ltd 
-  <span className="ml-2 bg-blue-100 text-blue-500 rounded-xl py-1 px-2 flex items-center w-24">
-    Present <GitMerge width={18} height={18} className="ml-2"/>
-  </span>
-</div>
+              <div className="font-medium text-black flex items-center">
+                ELK Education Consultants Pvt. Ltd
+                <span className="ml-2 bg-blue-100 text-blue-500 rounded-xl py-1 px-2 flex items-center w-24">
+                  Present <GitMerge width={18} height={18} className="ml-2" />
+                </span>
+              </div>
 
               <div className="flex items-center gap-2">
                 <h3 className="font-bold text-black">PHP Web Developer</h3>
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
               </div>
               <p className="text-xsm text-gray-500 font-semibold">
-                May 2024 - Present (6 m) • Chennai Urban, India • Full-Time
+                May 2024 - Present (10 m) • Chennai Urban, India • Full-Time
               </p>
             </div>
           </div>
