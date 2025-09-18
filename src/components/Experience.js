@@ -53,17 +53,17 @@ export default function Experience() {
             <div className="space-y-1 pt-1">
               <div className="font-medium text-black flex items-center">
                 ELK Education Consultants Pvt. Ltd
-                <span className="ml-2 bg-blue-100 text-blue-500 rounded-xl py-1 px-2 flex items-center w-24">
+                {/* <span className="ml-2 bg-blue-100 text-blue-500 rounded-xl py-1 px-2 flex items-center w-24">
                   Present <GitMerge width={18} height={18} className="ml-2" />
-                </span>
+                </span> */}
               </div>
 
               <div className="flex items-center gap-2">
-                <h3 className="font-bold text-black">PHP Web Developer</h3>
+                <h3 className="font-bold text-black">PHP, React Full Stack Developer</h3>
                 <CheckCircle2 className="w-5 h-5 text-green-500" />
               </div>
               <p className="text-xsm text-gray-500 font-semibold">
-                May 2024 - Present (10 m) • Chennai Urban, India • Full-Time
+                May 2024 - Sept 2025 (1 yr, 5 m) • Chennai Urban, India • Full-Time
               </p>
             </div>
           </div>

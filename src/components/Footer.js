@@ -1,7 +1,7 @@
 import React, { useRef,useEffect } from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 import Online from './Online';
-import myResume from '../assets/SaravananResume.pdf';
+import myResume from '../assets/Saravanan_v4.pdf';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
